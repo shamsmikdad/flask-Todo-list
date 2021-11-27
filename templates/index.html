@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1 class="text-center display-1">Todo List</h1>
+        </br>
+        <div class="shadow p-3 mb-5 bg-body rounded">
+
+        <form method="post">
+            {{ form.hidden_tag() }}
+
+            {{ form.tasks.label }}
+            {{ form.tasks() }}
+        </br>
+        </br>
+            {{ form.submit() }}
+
+        </form>
+    </div>
+    </br>
+    <ul class="list-group">
+        {% for our_task in our_tasks %}
+        <li class="list-group-item">
+          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+          {{our_task.task}}
+        </li>
+        {% endfor%}
+
+ {% endblock %}
